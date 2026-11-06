@@ -36,6 +36,8 @@ When several images are supplied, assign each a role before composing the reques
 - **Style reference:** controls rendering treatment, palette, edge quality, value grouping, and detail density. Do not copy its scene or composition unless requested.
 - **Mood or lighting reference:** controls only the specified light or atmosphere.
 
+When installed from this repository, use images in `references/assets/style-references/` as the default rendering and palette guide if the user has not supplied another style reference. Inspect only a few relevant examples. These images guide edge quality, value grouping, palette, and information density; they do not override the user's scene, camera, or constraints.
+
 The user's written constraints take priority over conflicting incidental content in references. Synthesize common visual traits across references instead of reproducing logos, captions, watermarks, interface frames, or identifiable franchise designs.
 
 ## Workflow
