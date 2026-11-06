@@ -13,13 +13,11 @@ A Codex skill for transforming photographs or scene briefs into restrained anime
 
 - `SKILL.md` — the complete skill instructions
 - `references/prompt-examples.md` — prompt patterns for common scene-restyling requests
+- `references/assets/style-references/` — visual references bundled with this skill
 - `evals/evals.json` — example requests and expected behaviors for reviewing the skill
 
-## Install
+## Install in Codex
 
-Copy this repository folder into your Codex skills directory as `anime-scene-background`:
+In Codex, invoke `$skill-installer` and ask it to install the skill from this repository URL: `https://github.com/minglu720/2D_JRPG_gameEnvironment`.
 
-- `$CODEX_HOME/skills/anime-scene-background`, if `CODEX_HOME` is set
-- Otherwise, `~/.codex/skills/anime-scene-background`
-
-Then invoke it with `$anime-scene-background` when asking Codex to restyle or create a game environment background.
+After installation, invoke `$anime-scene-background` or describe an image-restyling task that matches its scope. If it does not appear in the skill selector, restart Codex.
