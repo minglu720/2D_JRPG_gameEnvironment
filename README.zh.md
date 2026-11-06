@@ -13,13 +13,11 @@
 
 - `SKILL.md`：完整的 Skill 指令
 - `references/prompt-examples.md`：常见场景风格化任务的提示词范例
+- `references/assets/style-references/`：随 Skill 保存的视觉参考图
 - `evals/evals.json`：用于检查 Skill 行为的示例请求和预期结果
 
-## 安装
+## 在 Codex 中安装
 
-将整个仓库文件夹复制到 Codex 的 Skills 目录，并命名为 `anime-scene-background`：
+在 Codex 中调用 `$skill-installer`，并让它从这个仓库地址安装 Skill：`https://github.com/minglu720/2D_JRPG_gameEnvironment`。
 
-- 如果设置了 `CODEX_HOME`，放到 `$CODEX_HOME/skills/anime-scene-background`
-- 否则放到 `~/.codex/skills/anime-scene-background`
-
-之后可以在请求中使用 `$anime-scene-background` 调用它。
+安装后，可以用 `$anime-scene-background` 显式调用；也可以直接提出符合它用途的图片风格处理任务。如果 Skill 没出现在选择器里，重启 Codex。
