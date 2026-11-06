@@ -1,0 +1,30 @@
+[
+  {
+    "id": "photo-to-balanced-background",
+    "request": "Restyle this real city alley as an anime game background. Keep its buildings, doorway, and paving layout. Use balanced detail and a calm eye-level view.",
+    "expected": [
+      "Preserves major architecture and spatial relationships",
+      "Uses a calm eye-level medium or long view",
+      "Simplifies incidental texture while retaining distinctive scene details",
+      "Does not add characters, dramatic framing, or interaction staging"
+    ]
+  },
+  {
+    "id": "sparse-density",
+    "request": "Make this station interior a sparse anime background while keeping the same composition.",
+    "expected": [
+      "Retains major silhouettes, large planes, and recognizable landmarks",
+      "Merges small fixtures and repetitive detail into broad shapes",
+      "Keeps camera position and scene layout stable"
+    ]
+  },
+  {
+    "id": "style-reference-role",
+    "request": "Use photo A as the scene source and image B as the anime rendering reference. Keep the result empty of people.",
+    "expected": [
+      "Uses photo A for subject matter and spatial layout",
+      "Uses image B for rendering, palette, and detail treatment only",
+      "Does not copy image B's composition or add people"
+    ]
+  }
+]
