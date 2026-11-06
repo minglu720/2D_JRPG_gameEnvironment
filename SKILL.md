@@ -1,13 +1,13 @@
 ---
 name: anime-scene-background
-description: Transform supplied photographs or scene descriptions into restrained anime-style game environment backgrounds, preserving legible spatial structure while simplifying visual detail. Use when creating or restyling environment art with calm, eye-level medium or long shots and no character-centered staging.
+description: Transform supplied photographs or scene descriptions into polished, CG-like anime game environment backgrounds with fine airbrush-rendered grain, strong cool-warm light contrast, and preserved spatial structure. Use when creating or restyling environment art with calm, eye-level medium or long shots and no character-centered staging.
 metadata:
   short-description: Style game environment backgrounds
 ---
 
 # Anime Scene Background
 
-Turn a real place or scene brief into a coherent anime-inspired game background. Treat scene structure and visual style as separate inputs: the source photo or scene description defines what is there and how spaces connect; style references define how forms, light, color, and detail are rendered.
+Turn a real place or scene brief into a coherent, polished anime-inspired game background with a CG-like rendered finish. Treat scene structure and visual style as separate inputs: the source photo or scene description defines what is there and how spaces connect; style references define how forms, light, color, and detail are rendered.
 
 ## Default visual direction
 
@@ -26,7 +26,19 @@ Read the requested information density as a level of detail, not as permission t
 - **Balanced (default):** keep the main architecture, visible infrastructure, and a few characteristic details; simplify repetitive windows, clutter, foliage, and texture into grouped shapes.
 - **Rich:** preserve more secondary fixtures, material cues, and local variation, while keeping edges, values, and detail selective so the scene remains readable.
 
-At every level, protect the large spatial read first. Use clean anime-background shapes, controlled linework where appropriate, layered but subtle atmospheric perspective, and a limited palette derived from the source or supplied style references. Render surfaces with selective texture rather than photoreal microdetail. Do not invent signage text; keep existing text illegible or omit it unless the user needs it preserved.
+At every level, protect the large spatial read first. Use clear anime-background shapes, selective edge accents rather than ink outlines, layered atmospheric perspective, and a palette derived from the source or supplied style references. Render surfaces with fine integrated tonal grain and airbrush shading rather than photoreal microdetail or coarse brush marks. Do not invent signage text; keep existing text illegible or omit it unless the user needs it preserved.
+
+## Preserve the source's color and light
+
+- Treat the source image's overall color cast, saturation, and value balance as scene facts. Do not warm, cool, brighten, darken, or otherwise recolor the whole image unless the user requests it. In particular, preserve muted or gray-leaning palettes instead of defaulting to vivid golden anime light.
+- Preserve the source's light direction, distribution, haze, and atmospheric depth. Keep painterly bloom and diffusion when visible. Build a rendered light-and-shadow structure with selective crisp edges at the boundary of direct light, while preserving soft airbrush transitions and haze around them.
+- Use a polished CG-like game-art finish with fine, subtle tonal grain and layered airbrush shading. Grain should feel integrated into the paint, like a delicate stippled rendering texture rather than literal digital noise. Keep texture fine and controlled; avoid broad, chunky, visibly streaked brush marks.
+- Define forms through grouped color, value, and selective edges. Do not add uniform ink outlines or strong contour linework. Keep the painted surface and subtle airbrush transitions visible without making the image look rough or unfinished.
+- Maintain the source's cool-warm color relationships. Where the source supports it, retain cool ambient shadows against warmer lit stone (or the reverse), without shifting the overall palette.
+- Preserve the source's overall palette and tonal identity unless the user asks to change them. By default, create a full, clearly legible tonal range: deep shadow masses approach near-black and the brightest lit planes approach near-white, with enough midtones to retain form, haze, and atmosphere.
+- Build a clear cool-warm relationship: cool blue-gray or charcoal shadows against warm cream, amber, or golden highlights, guided by the source. Concentrate warm color in directly lit planes; do not apply a global amber filter or raise overall saturation indiscriminately.
+- Let direct sunlight have selective harder boundaries and brighter edges. Add a restrained warm airbrush glow around the brightest areas, fading into the surrounding haze. Keep this glow within the source's light pattern; do not invent light sources, flatten shadows, or add dramatic shafts.
+- If the user gives a numeric contrast request, treat it as an adjustment to light-shadow separation. A later request for stronger contrast supersedes an earlier lower contrast target. Do not interpret contrast as global saturation.
 
 ## Image roles
 
@@ -45,7 +57,7 @@ The user's written constraints take priority over conflicting incidental content
 1. Identify the scene source, style references, requested information density, and any explicit changes such as season or time of day. If a density level is not specified, use Balanced.
 2. Keep the source's camera height and broad composition unless the user requests reframing. If the source is a close or character-led image, adapt to a calm environment view only when the scene can be reconstructed reliably; otherwise state the limitation briefly and preserve the most useful environmental context.
 3. Describe the main spatial structure in plain terms, then specify what to retain and what to simplify. Keep lighting, mood, and palette separate from scene content.
-4. Generate or edit using the available image-generation tool, with the source and style references explicitly labeled by role. Preserve the source's aspect ratio unless asked to change it.
+4. Generate or edit using the available image-generation tool, with the source and style references explicitly labeled by role. Preserve the source's aspect ratio unless asked to change it. Specify the fine airbrush grain, controlled CG-like rendering, tonal endpoints, and cool-warm light relationship directly in the prompt.
 5. Review the result against the source and brief: Is the location still recognizable? Is the view eye-level and medium/long? Are architecture and spatial relations legible? Did people, foreground framing, dramatic narrative cues, or character interaction space appear without request? Is the detail level consistent across the scene? Revise only the failing aspect.
 
 ## Prompt scaffold
@@ -59,9 +71,6 @@ Style reference: [what the reference controls; omit if none]
 Scene: [place and defining structures]
 Composition: calm eye-level medium/long establishing view; preserve [key spatial relations]
 Information density: [Sparse / Balanced / Rich]; simplify [details] while retaining [landmarks]
-Style: restrained hand-painted anime background, clear grouped forms, selective linework and texture, subtle depth separation
-Lighting and palette: [source-faithful or requested conditions]
+Style: polished CG-like anime game background, fine airbrush-rendered tonal grain, controlled painted transitions, no ink outlines, selective edge accents
+Lighting and palette: preserve [source palette and light pattern]; deep cool shadows approaching near-black, warm lit planes approaching near-white, fine atmospheric haze and restrained airbrush glow
 Constraints: environment only; no characters or interaction staging; no dramatic camera; unobtrusive foreground; no text, logos, UI, or watermark
-```
-
-Treat this as guidance, not a requirement to add every phrase to every prompt. Follow the user's explicit artistic direction when it differs from the defaults.
